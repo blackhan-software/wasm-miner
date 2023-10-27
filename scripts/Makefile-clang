@@ -1,0 +1,25 @@
+CFLAGS=\
+	-ffreestanding \
+	-flto \
+	-fno-builtin \
+	-mexec-model=reactor \
+	-nostdlib \
+	-O3 \
+	--target=wasm32
+LDFLAGS=\
+	-Wl,--allow-undefined \
+	-Wl,--compress-relocations \
+	-Wl,--export-dynamic \
+	-Wl,--initial-memory=131072 \
+	-Wl,--max-memory=131072 \
+	-Wl,--no-entry \
+	-Wl,--strip-all
+
+all : /app/wasm/keccak256.wasm
+	clang --version
+	wasm-ld --version
+
+/app/wasm/%.wasm : /app/src/%.c
+	clang $(CFLAGS) $(LDFLAGS) -o $@ $<
+	sha1sum $@
+	stat -c "%n size: %s bytes" $@

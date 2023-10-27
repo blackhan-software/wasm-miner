@@ -1,0 +1,16 @@
+benchmark
+coverage
+dist
+.env
+.eslintcache
+.github
+.jest-cache
+*.log
+logs
+node_modules/
+.npm
+npm-debug.log*
+scripts
+test
+*.tgz
+wasm
