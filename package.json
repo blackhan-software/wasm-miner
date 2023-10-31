@@ -29,7 +29,9 @@
   },
   "homepage": "https://github.com/blackhan-software/wasm-miner#readme",
   "keywords": [
-    "keccak", "wasm", "miner"
+    "keccak",
+    "wasm",
+    "miner"
   ],
   "license": "GPL-3.0",
   "main": "dist/index.umd.js",
@@ -47,5 +49,5 @@
     "test": "node --expose-gc ./node_modules/.bin/jest --coverage --logHeapUsage"
   },
   "types": "dist/lib/index.d.ts",
-  "version": "0.0.0"
+  "version": "1.0.15"
 }
